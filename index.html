@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Inner Tech Lab by Marijke Wouters — breathing behavior analysis, capnography, and nervous system regulation for high performers.">
+    <meta name="description" content="Inner Tech Lab by Marijke Wouters — breathing behavior analysis and nervous system regulation.">
     <title>Inner Tech Lab | Marijke Wouters</title>
     <style>
         * {
@@ -13,39 +13,74 @@
         }
 
         html, body {
+            height: 100%;
             font-family: Georgia, 'Times New Roman', serif;
-            line-height: 1.7;
             color: #2a2a2a;
             background: #ffffff;
             -webkit-font-smoothing: antialiased;
         }
 
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
         .logo-header {
             width: 100%;
-            padding: 40px 20px 20px;
+            padding: 32px 20px 8px;
             text-align: center;
-            background: #ffffff;
         }
 
         .logo-header img {
-            max-width: 600px;
+            max-width: 520px;
             width: 100%;
             height: auto;
         }
 
-        .container {
-            max-width: 780px;
-            margin: 0 auto;
-            padding: 20px 32px 80px;
+        .socials {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 0 20px 20px;
+        }
+
+        .socials a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            color: #2a8f7e;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .socials a:hover {
+            background: #f0f6f4;
+            color: #1f6b62;
+        }
+
+        .socials svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        .main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
         }
 
         .hero {
             display: flex;
-            gap: 48px;
+            gap: 56px;
             align-items: center;
-            margin-bottom: 60px;
-            padding-bottom: 60px;
-            border-bottom: 1px solid #e8e8e8;
+            max-width: 860px;
+            width: 100%;
         }
 
         .hero-photo {
@@ -53,130 +88,59 @@
         }
 
         .hero-photo img {
-            width: 220px;
-            height: 220px;
+            width: 240px;
+            height: 240px;
             object-fit: cover;
             border-radius: 50%;
             display: block;
         }
 
         .hero-text h1 {
-            font-size: 32px;
+            font-size: 36px;
             font-weight: normal;
             color: #1a1a1a;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
             line-height: 1.2;
             letter-spacing: -0.5px;
         }
 
         .hero-text .tagline {
-            font-size: 17px;
-            color: #666;
-            font-style: italic;
-            line-height: 1.5;
-        }
-
-        .greeting {
-            font-size: 19px;
-            color: #1a1a1a;
-            margin-bottom: 28px;
-            line-height: 1.6;
-        }
-
-        .intro {
-            font-size: 17px;
-            color: #444;
-            margin-bottom: 24px;
-        }
-
-        .cta-primary {
-            margin: 40px 0 60px;
-            text-align: center;
-            padding: 32px;
-            background: #f8f8f6;
-            border-radius: 4px;
-        }
-
-        .cta-primary p {
-            font-size: 16px;
-            color: #555;
-            margin-bottom: 20px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 14px 36px;
-            background: #2a8f7e;
-            color: white;
-            text-decoration: none;
-            font-family: Georgia, serif;
-            font-size: 16px;
-            letter-spacing: 0.5px;
-            border-radius: 2px;
-            transition: background 0.2s ease;
-        }
-
-        .btn:hover {
-            background: #1f6b62;
-        }
-
-        .about {
-            margin-top: 40px;
-        }
-
-        .about h2 {
-            font-size: 26px;
-            font-weight: normal;
-            color: #1a1a1a;
-            margin-bottom: 28px;
-            letter-spacing: -0.3px;
-        }
-
-        .about p {
-            font-size: 17px;
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        .about p em {
-            color: #2a8f7e;
-            font-style: normal;
-            font-weight: 500;
-        }
-
-        .about .emphasis {
             font-size: 18px;
-            color: #1a1a1a;
-            font-style: italic;
-            margin: 32px 0;
-            padding-left: 20px;
-            border-left: 3px solid #2a8f7e;
-        }
-
-        .closing {
-            margin-top: 60px;
-            padding-top: 40px;
-            border-top: 1px solid #e8e8e8;
-            text-align: center;
-        }
-
-        .closing p {
-            font-size: 17px;
             color: #555;
-            margin-bottom: 24px;
             font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 28px;
+        }
+
+        .linktree-link {
+            display: inline-block;
+            font-size: 17px;
+            color: #2a8f7e;
+            text-decoration: none;
+            font-style: normal;
+            border-bottom: 1px solid #2a8f7e;
+            padding-bottom: 2px;
+            transition: all 0.2s ease;
+        }
+
+        .linktree-link:hover {
+            color: #1f6b62;
+            border-bottom-color: #1f6b62;
         }
 
         .footer {
             text-align: center;
-            padding: 40px 20px;
-            color: #999;
-            font-size: 14px;
-            font-family: -apple-system, sans-serif;
-            background: #fafafa;
+            padding: 24px 20px;
+            color: #aaa;
+            font-size: 13px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         }
 
         @media (max-width: 700px) {
+            .logo-header {
+                padding: 24px 16px 8px;
+            }
+
             .hero {
                 flex-direction: column;
                 text-align: center;
@@ -189,23 +153,15 @@
             }
 
             .hero-text h1 {
-                font-size: 26px;
+                font-size: 28px;
             }
 
-            .container {
-                padding: 20px 24px 60px;
-            }
-
-            .logo-header {
-                padding: 30px 16px 10px;
-            }
-
-            .about h2 {
-                font-size: 22px;
-            }
-
-            .about p, .intro {
+            .hero-text .tagline {
                 font-size: 16px;
+            }
+
+            .main {
+                padding: 16px;
             }
         }
     </style>
@@ -215,7 +171,20 @@
         <img src="logo.png" alt="Inner Tech Lab">
     </div>
 
-    <div class="container">
+    <div class="socials">
+        <a href="https://www.linkedin.com/in/marijkewouters" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+        </a>
+        <a href="https://www.instagram.com/marijkewouters/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+            </svg>
+        </a>
+    </div>
+
+    <div class="main">
         <div class="hero">
             <div class="hero-photo">
                 <img src="marijke.jpg" alt="Marijke Wouters">
@@ -223,52 +192,13 @@
             <div class="hero-text">
                 <h1>Hi dear human.</h1>
                 <p class="tagline">Things are constantly moving in my work. You'll find all current projects, writings, and ways to connect gathered in one place.</p>
+                <a href="https://linktr.ee/innertechlab" class="linktree-link">→ linktr.ee/innertechlab</a>
             </div>
-        </div>
-
-        <div class="cta-primary">
-            <p>Everything I'm currently working on — breathing analysis, Mental Vacations, The Breath Path, The Missing Piece, writings, and more:</p>
-            <a href="https://linktr.ee/innertechlab" class="btn">→ Go to linktree</a>
-        </div>
-
-        <div class="about">
-            <h2>A bit about me</h2>
-
-            <p>I'm a <em>failed scientist</em>. At least, that's how it felt when I walked away from finishing my PhD.</p>
-
-            <p>But like many high-performers, I didn't struggle because my mind was weak. Au contraire — it's fast, analytical, with exceptional processing power. <em>And that was precisely the problem.</em></p>
-
-            <p>No matter how great life looked on paper, my system was restless. As if there was always something to do, to figure out, to perfect. A million ways to write that paper. Endless possibilities to shape my life. Analysis paralysis at its finest — until my battery died.</p>
-
-            <p>I did what most overthinkers do. I researched. I read. Listened to podcasts. Tried to understand my way out. It didn't work.</p>
-
-            <div class="emphasis">The epiphany came when I stopped optimizing cognitively, and started observing physiology.</div>
-
-            <p>Across fields and industries, I kept seeing the same pattern: highly capable people who functioned exceptionally well, but whose nervous system never truly downshifted, and felt persistently off as a result.</p>
-
-            <p>Not a mindset problem. <em>A regulation problem.</em></p>
-
-            <p>Instead of trying to "calm the mind with the mind," I began studying how calm and clarity actually emerges — bottom up. Through nervous system science. Breathing physiology. Neuroplasticity.</p>
-
-            <p>Today, this is what I do. Using real-time CO₂ monitoring (capnography), I make visible how you breathe — and how those patterns quietly shape your resilience capacity. Not generic advice like "breathe slower," but individualized data that explains why your system won't downshift, and what it needs to regain balance.</p>
-
-            <h2 style="margin-top: 48px;">Why breath?</h2>
-
-            <p>It's the only autonomic function you can consciously influence. The physical lever that shifts your biology in real-time. Moreover, we breathe over 20.000 times a day — it's the most frequent input your system receives.</p>
-
-            <div class="emphasis">It's baffling how little meaningful conversation there is around something so profoundly impactful.</div>
-
-            <p>So let's talk. Because when unstoppable minds understand how to regulate from the inside out, the body stops being a bottleneck and becomes the mind's greatest ally. <em>That is where your full potential finally comes through.</em></p>
-        </div>
-
-        <div class="closing">
-            <p>Curious whether breathing education or analysis could contribute to your own, your team's, or your clients' wellbeing?</p>
-            <a href="https://linktr.ee/innertechlab" class="btn">Explore my current work →</a>
         </div>
     </div>
 
     <div class="footer">
-        <p>Inner Tech Lab · Leuven, Belgium · marijke@innertechlab.com</p>
+        Inner Tech Lab · Leuven, Belgium · marijke@innertechlab.com
     </div>
 </body>
 </html>
