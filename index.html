@@ -3,47 +3,272 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inner Tech Lab</title>
-    <meta http-equiv="refresh" content="0; url=https://linktr.ee/innertechlab">
-    <link rel="canonical" href="https://linktr.ee/innertechlab">
+    <meta name="description" content="Inner Tech Lab by Marijke Wouters — breathing behavior analysis, capnography, and nervous system regulation for high performers.">
+    <title>Inner Tech Lab | Marijke Wouters</title>
     <style>
-        body {
+        * {
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: #f5f5f5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
+            box-sizing: border-box;
         }
-        .container {
+
+        html, body {
+            font-family: Georgia, 'Times New Roman', serif;
+            line-height: 1.7;
+            color: #2a2a2a;
+            background: #ffffff;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .logo-header {
+            width: 100%;
+            padding: 40px 20px 20px;
             text-align: center;
-            padding: 20px;
+            background: #ffffff;
         }
-        h1 {
-            color: #333;
-            margin-bottom: 10px;
+
+        .logo-header img {
+            max-width: 600px;
+            width: 100%;
+            height: auto;
         }
-        p {
+
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 20px 32px 80px;
+        }
+
+        .hero {
+            display: flex;
+            gap: 48px;
+            align-items: center;
+            margin-bottom: 60px;
+            padding-bottom: 60px;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        .hero-photo {
+            flex-shrink: 0;
+        }
+
+        .hero-photo img {
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 50%;
+            display: block;
+        }
+
+        .hero-text h1 {
+            font-size: 32px;
+            font-weight: normal;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-text .tagline {
+            font-size: 17px;
             color: #666;
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        .greeting {
+            font-size: 19px;
+            color: #1a1a1a;
+            margin-bottom: 28px;
+            line-height: 1.6;
+        }
+
+        .intro {
+            font-size: 17px;
+            color: #444;
+            margin-bottom: 24px;
+        }
+
+        .cta-primary {
+            margin: 40px 0 60px;
+            text-align: center;
+            padding: 32px;
+            background: #f8f8f6;
+            border-radius: 4px;
+        }
+
+        .cta-primary p {
+            font-size: 16px;
+            color: #555;
             margin-bottom: 20px;
         }
-        a {
-            color: #0066cc;
+
+        .btn {
+            display: inline-block;
+            padding: 14px 36px;
+            background: #2a8f7e;
+            color: white;
             text-decoration: none;
+            font-family: Georgia, serif;
+            font-size: 16px;
+            letter-spacing: 0.5px;
+            border-radius: 2px;
+            transition: background 0.2s ease;
+        }
+
+        .btn:hover {
+            background: #1f6b62;
+        }
+
+        .about {
+            margin-top: 40px;
+        }
+
+        .about h2 {
+            font-size: 26px;
+            font-weight: normal;
+            color: #1a1a1a;
+            margin-bottom: 28px;
+            letter-spacing: -0.3px;
+        }
+
+        .about p {
+            font-size: 17px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .about p em {
+            color: #2a8f7e;
+            font-style: normal;
             font-weight: 500;
         }
-        a:hover {
-            text-decoration: underline;
+
+        .about .emphasis {
+            font-size: 18px;
+            color: #1a1a1a;
+            font-style: italic;
+            margin: 32px 0;
+            padding-left: 20px;
+            border-left: 3px solid #2a8f7e;
+        }
+
+        .closing {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid #e8e8e8;
+            text-align: center;
+        }
+
+        .closing p {
+            font-size: 17px;
+            color: #555;
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #999;
+            font-size: 14px;
+            font-family: -apple-system, sans-serif;
+            background: #fafafa;
+        }
+
+        @media (max-width: 700px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                gap: 32px;
+            }
+
+            .hero-photo img {
+                width: 180px;
+                height: 180px;
+            }
+
+            .hero-text h1 {
+                font-size: 26px;
+            }
+
+            .container {
+                padding: 20px 24px 60px;
+            }
+
+            .logo-header {
+                padding: 30px 16px 10px;
+            }
+
+            .about h2 {
+                font-size: 22px;
+            }
+
+            .about p, .intro {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="logo-header">
+        <img src="logo.png" alt="Inner Tech Lab">
+    </div>
+
     <div class="container">
-        <h1>Inner Tech Lab</h1>
-        <p>Redirecting to our linktree...</p>
-        <p><a href="https://linktr.ee/innertechlab">Click here if you're not redirected automatically</a></p>
+        <div class="hero">
+            <div class="hero-photo">
+                <img src="marijke.jpg" alt="Marijke Wouters">
+            </div>
+            <div class="hero-text">
+                <h1>Hi dear human.</h1>
+                <p class="tagline">Things are constantly moving in my work. You'll find all current projects, writings, and ways to connect gathered in one place.</p>
+            </div>
+        </div>
+
+        <div class="cta-primary">
+            <p>Everything I'm currently working on — breathing analysis, Mental Vacations, The Breath Path, The Missing Piece, writings, and more:</p>
+            <a href="https://linktr.ee/innertechlab" class="btn">→ Go to linktree</a>
+        </div>
+
+        <div class="about">
+            <h2>A bit about me</h2>
+
+            <p>I'm a <em>failed scientist</em>. At least, that's how it felt when I walked away from finishing my PhD.</p>
+
+            <p>But like many high-performers, I didn't struggle because my mind was weak. Au contraire — it's fast, analytical, with exceptional processing power. <em>And that was precisely the problem.</em></p>
+
+            <p>No matter how great life looked on paper, my system was restless. As if there was always something to do, to figure out, to perfect. A million ways to write that paper. Endless possibilities to shape my life. Analysis paralysis at its finest — until my battery died.</p>
+
+            <p>I did what most overthinkers do. I researched. I read. Listened to podcasts. Tried to understand my way out. It didn't work.</p>
+
+            <div class="emphasis">The epiphany came when I stopped optimizing cognitively, and started observing physiology.</div>
+
+            <p>Across fields and industries, I kept seeing the same pattern: highly capable people who functioned exceptionally well, but whose nervous system never truly downshifted, and felt persistently off as a result.</p>
+
+            <p>Not a mindset problem. <em>A regulation problem.</em></p>
+
+            <p>Instead of trying to "calm the mind with the mind," I began studying how calm and clarity actually emerges — bottom up. Through nervous system science. Breathing physiology. Neuroplasticity.</p>
+
+            <p>Today, this is what I do. Using real-time CO₂ monitoring (capnography), I make visible how you breathe — and how those patterns quietly shape your resilience capacity. Not generic advice like "breathe slower," but individualized data that explains why your system won't downshift, and what it needs to regain balance.</p>
+
+            <h2 style="margin-top: 48px;">Why breath?</h2>
+
+            <p>It's the only autonomic function you can consciously influence. The physical lever that shifts your biology in real-time. Moreover, we breathe over 20.000 times a day — it's the most frequent input your system receives.</p>
+
+            <div class="emphasis">It's baffling how little meaningful conversation there is around something so profoundly impactful.</div>
+
+            <p>So let's talk. Because when unstoppable minds understand how to regulate from the inside out, the body stops being a bottleneck and becomes the mind's greatest ally. <em>That is where your full potential finally comes through.</em></p>
+        </div>
+
+        <div class="closing">
+            <p>Curious whether breathing education or analysis could contribute to your own, your team's, or your clients' wellbeing?</p>
+            <a href="https://linktr.ee/innertechlab" class="btn">Explore my current work →</a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Inner Tech Lab · Leuven, Belgium · marijke@innertechlab.com</p>
     </div>
 </body>
 </html>
